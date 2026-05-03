@@ -15,13 +15,15 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      RSS_4K_INVEST: ${{ secrets.RSS_4K_INVEST }}
+      RSS_4K_APPLE: ${{ secrets.RSS_4K_APPLE }}
       DISCORD_4K_WEBHOOK: ${{ secrets.DISCORD_4K_WEBHOOK }}
 
-      RSS_WEATHER_BOSAI: ${{ secrets.RSS_WEATHER_BOSAI }}
+      RSS_WEATHER_ABNORMAL: ${{ secrets.RSS_WEATHER_ABNORMAL }}
+      RSS_WEATHER_US: ${{ secrets.RSS_WEATHER_US }}
       DISCORD_WEATHER_BOSAI_WEBHOOK: ${{ secrets.DISCORD_WEATHER_BOSAI_WEBHOOK }}
 
-      RSS_FIREWORKS: ${{ secrets.RSS_FIREWORKS }}
+      RSS_FIREWORKS_HANABISHI: ${{ secrets.RSS_FIREWORKS_HANABISHI }}
+      RSS_FIREWORKS_HANABITAIKAI: ${{ secrets.RSS_FIREWORKS_HANABITAIKAI }}
       DISCORD_FIREWORKS_WEBHOOK: ${{ secrets.DISCORD_FIREWORKS_WEBHOOK }}
 
     steps:
