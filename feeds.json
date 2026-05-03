@@ -3,10 +3,10 @@
     "id": "4k-invest-main",
     "enabled": true,
     "hub": "4K Hub（投資情報Hub）",
-    "name": "投資に関するGoogleアラート",
-    "rss_env": "RSS_4K_INVEST",
-    "webhook_env": "DISCORD_4K_WEBHOOK",
-    "username": "4K Hub Alerts",
+    "name": "Apple",
+    "rss_env": "RSS_4K_Apple",
+    "webhook_env": "DISCORD_4K_WEBHOOK"
+      "username": "4K Hub Alerts",
     "prefix": "📈 **4K Hub / 投資情報アラート**",
     "color": 3447003
   },
