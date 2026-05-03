@@ -2,8 +2,9 @@ name: Google Alerts to Discord
 
 on:
   schedule:
-    # JST 07:30 / 19:30
-    - cron: "30 22,10 * * *"
+    # JST 05:00 / 13:00 / 19:00
+    # UTC 20:00 / 04:00 / 10:00
+    - cron: "0 20,4,10 * * *"
 
   workflow_dispatch:
 
