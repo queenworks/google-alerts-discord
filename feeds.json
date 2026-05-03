@@ -1,0 +1,35 @@
+[
+  {
+    "id": "4k-invest-main",
+    "enabled": true,
+    "hub": "4K Hub（投資情報Hub）",
+    "name": "投資に関するGoogleアラート",
+    "rss_env": "RSS_4K_INVEST",
+    "webhook_env": "DISCORD_4K_WEBHOOK",
+    "username": "4K Hub Alerts",
+    "prefix": "📈 **4K Hub / 投資情報アラート**",
+    "color": 3447003
+  },
+  {
+    "id": "weather-bosai-main",
+    "enabled": true,
+    "hub": "🌏 Weather Bosai Hub（気象防災ハブ）",
+    "name": "気象に関するGoogleアラート",
+    "rss_env": "RSS_WEATHER_BOSAI",
+    "webhook_env": "DISCORD_WEATHER_BOSAI_WEBHOOK",
+    "username": "Weather Bosai Alerts",
+    "prefix": "🌏 **Weather Bosai Hub / 気象防災アラート**",
+    "color": 3066993
+  },
+  {
+    "id": "fireworks-main",
+    "enabled": true,
+    "hub": "Fireworks Hub（花火ハブ）",
+    "name": "花火に関するGoogleアラート",
+    "rss_env": "RSS_FIREWORKS",
+    "webhook_env": "DISCORD_FIREWORKS_WEBHOOK",
+    "username": "Fireworks Hub Alerts",
+    "prefix": "🎆 **Fireworks Hub / 花火アラート**",
+    "color": 15105570
+  }
+]
