@@ -4,7 +4,7 @@
     "enabled": true,
     "hub": "4K Hub（投資情報Hub）",
     "name": "Apple",
-    "rss_env": "RSS_4K_Apple",
+    "rss_env": "RSS_4K_APPLE",
     "webhook_env": "DISCORD_4K_WEBHOOK",
     "username": "4K Hub Alerts",
     "prefix": "📈 **4K Hub / Appleアラート**",
