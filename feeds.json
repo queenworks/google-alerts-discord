@@ -1,35 +1,35 @@
 [
   {
-    "id": "4k-invest-main",
+    "id": "4k-apple",
     "enabled": true,
     "hub": "4K Hub（投資情報Hub）",
     "name": "Apple",
     "rss_env": "RSS_4K_Apple",
-    "webhook_env": "DISCORD_4K_WEBHOOK"
-      "username": "4K Hub Alerts",
-    "prefix": "📈 **4K Hub / 投資情報アラート**",
+    "webhook_env": "DISCORD_4K_WEBHOOK",
+    "username": "4K Hub Alerts",
+    "prefix": "📈 **4K Hub / Appleアラート**",
     "color": 3447003
   },
   {
-    "id": "weather-bosai-main",
+    "id": "weather-abnormal",
     "enabled": true,
     "hub": "🌏 Weather Bosai Hub（気象防災ハブ）",
-    "name": "気象に関するGoogleアラート",
-    "rss_env": "RSS_WEATHER_BOSAI",
+    "name": "異常気象",
+    "rss_env": "RSS_WEATHER_Abnormal",
     "webhook_env": "DISCORD_WEATHER_BOSAI_WEBHOOK",
     "username": "Weather Bosai Alerts",
-    "prefix": "🌏 **Weather Bosai Hub / 気象防災アラート**",
+    "prefix": "🌏 **Weather Bosai Hub / 異常気象アラート**",
     "color": 3066993
   },
   {
-    "id": "fireworks-main",
+    "id": "weather-us",
     "enabled": true,
-    "hub": "Fireworks Hub（花火ハブ）",
-    "name": "花火に関するGoogleアラート",
-    "rss_env": "RSS_FIREWORKS",
-    "webhook_env": "DISCORD_FIREWORKS_WEBHOOK",
-    "username": "Fireworks Hub Alerts",
-    "prefix": "🎆 **Fireworks Hub / 花火アラート**",
-    "color": 15105570
+    "hub": "🌏 Weather Bosai Hub（気象防災ハブ）",
+    "name": "米国気象",
+    "rss_env": "RSS_WEATHER_US",
+    "webhook_env": "DISCORD_WEATHER_BOSAI_WEBHOOK",
+    "username": "Weather Bosai Alerts",
+    "prefix": "🌏 **Weather Bosai Hub / 米国気象アラート**",
+    "color": 3066993
   }
 ]
