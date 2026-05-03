@@ -15,7 +15,7 @@
     "enabled": true,
     "hub": "🌏 Weather Bosai Hub（気象防災ハブ）",
     "name": "異常気象",
-    "rss_env": "RSS_WEATHER_Abnormal",
+    "rss_env": "RSS_WEATHER_ABNORMAL",
     "webhook_env": "DISCORD_WEATHER_BOSAI_WEBHOOK",
     "username": "Weather Bosai Alerts",
     "prefix": "🌏 **Weather Bosai Hub / 異常気象アラート**",
@@ -31,27 +31,27 @@
     "username": "Weather Bosai Alerts",
     "prefix": "🌏 **Weather Bosai Hub / 米国気象アラート**",
     "color": 3066993
-  }
+  },
   {
-  "id": "fireworks-hanabishi",
-  "enabled": true,
-  "hub": "Fireworks Hub（花火ハブ）",
-  "name": "花火師",
-  "rss_env": "RSS_FIREWORKS_Hanabishi",
-  "webhook_env": "DISCORD_FIREWORKS_WEBHOOK",
-  "username": "Fireworks Hub Alerts",
-  "prefix": "🎆 **Fireworks Hub / 花火師アラート**",
-  "color": 15105570
-},
-{
-  "id": "fireworks-hanabi-taikai",
-  "enabled": true,
-  "hub": "Fireworks Hub（花火ハブ）",
-  "name": "花火大会",
-  "rss_env": "RSS_FIREWORKS_HanabiTaikai",
-  "webhook_env": "DISCORD_FIREWORKS_WEBHOOK",
-  "username": "Fireworks Hub Alerts",
-  "prefix": "🎆 **Fireworks Hub / 花火大会アラート**",
-  "color": 15105570
-}
+    "id": "fireworks-hanabishi",
+    "enabled": true,
+    "hub": "Fireworks Hub（花火ハブ）",
+    "name": "花火師",
+    "rss_env": "RSS_FIREWORKS_HANABISHI",
+    "webhook_env": "DISCORD_FIREWORKS_WEBHOOK",
+    "username": "Fireworks Hub Alerts",
+    "prefix": "🎆 **Fireworks Hub / 花火師アラート**",
+    "color": 15105570
+  },
+  {
+    "id": "fireworks-hanabi-taikai",
+    "enabled": true,
+    "hub": "Fireworks Hub（花火ハブ）",
+    "name": "花火大会",
+    "rss_env": "RSS_FIREWORKS_HANABITAIKAI",
+    "webhook_env": "DISCORD_FIREWORKS_WEBHOOK",
+    "username": "Fireworks Hub Alerts",
+    "prefix": "🎆 **Fireworks Hub / 花火大会アラート**",
+    "color": 15105570
+  }
 ]
