@@ -1,6 +1,6 @@
 [
   {
-    "id": "4k-apple",
+    "id": "4k-apple-test",
     "enabled": true,
     "hub": "4K Hub（投資情報Hub）",
     "name": "Apple",
@@ -11,7 +11,7 @@
     "color": 3447003
   },
   {
-    "id": "weather-global"
+    "id": "weather-global-test",
     "enabled": true,
     "hub": "🌏 Weather Bosai Hub（気象防災ハブ）",
     "name": "異常気象（グローバル）",
@@ -22,7 +22,7 @@
     "color": 3066993
   },
   {
-    "id": "fireworks-global"
+    "id": "fireworks-global-test",
     "enabled": true,
     "hub": "Fireworks Hub（花火ハブ）",
     "name": "花火（総合）",
