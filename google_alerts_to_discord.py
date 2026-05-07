@@ -181,11 +181,12 @@ def process_feed(feed_conf, state) -> bool:
 
     # 初回だけ：投稿せず既読登録
     if feed_key not in state:
-        state[feed_key] = [make_entry_id(entry) for entry in entries][-MAX_SEEN_PER_FEED:]
-
         if SKIP_FIRST_RUN:
+            state[feed_key] = [make_entry_id(entry) for entry in entries][-MAX_SEEN_PER_FEED:]
             print(f"FIRST RUN SKIPPED: {name} / registered={len(state[feed_key])}")
             return True
+        else:
+            state[feed_key] = []
 
     seen = state.setdefault(feed_key, [])
 
