@@ -22,7 +22,7 @@ MAX_SEEN_PER_FEED = 500
 DISCORD_TIMEOUT_SECONDS = 20
 
 # 初回は投稿せず、既読登録だけする
-SKIP_FIRST_RUN = True
+SKIP_FIRST_RUN = False
 
 IMPORTANT_KEYWORDS = [
     # 気象・防災
