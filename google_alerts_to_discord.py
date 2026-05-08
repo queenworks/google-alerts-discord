@@ -17,7 +17,7 @@ import requests
 FEEDS_FILE = Path("feeds.json")
 STATE_FILE = Path("state/google_alerts_seen.json")
 
-MAX_POSTS_PER_FEED = 3
+MAX_POSTS_PER_FEED = 7
 MAX_SEEN_PER_FEED = 500
 DISCORD_TIMEOUT_SECONDS = 20
 
