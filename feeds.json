@@ -1,16 +1,5 @@
 [
   {
-    "id": "4k-apple",
-    "enabled": true,
-    "hub": "4K Hub（投資情報Hub）",
-    "name": "Apple",
-    "rss_env": "RSS_4K_APPLE",
-    "webhook_env": "DISCORD_4K_WEBHOOK",
-    "username": "4K Hub Alerts",
-    "prefix": "📈 **4K Hub / Appleアラート**",
-    "color": 3447003
-  },
-  {
     "id": "weather-global",
     "enabled": true,
     "hub": "🌏 Weather Bosai Hub（気象防災ハブ）",
@@ -33,12 +22,23 @@
     "color": 15105570
   },
   {
+    "id": "4k-apple",
+    "enabled": true,
+    "hub": "4K Hub（投資情報Hub）",
+    "name": "Apple",
+    "rss_env": "RSS_4K_APPLE",
+    "webhook_env": "DISCORD_4K_APPLE_WEBHOOK",
+    "username": "4K Hub Alerts",
+    "prefix": "📈 **4K Hub / Appleアラート**",
+    "color": 3447003
+  },
+  {
     "id": "4k-kioxia",
     "enabled": true,
     "hub": "4K Hub（投資情報Hub）",
     "name": "キオクシア",
     "rss_env": "RSS_4K_KIOXIA",
-    "webhook_env": "DISCORD_4K_WEBHOOK",
+    "webhook_env": "DISCORD_4K_KIOXIA_WEBHOOK",
     "username": "4K Hub Alerts",
     "prefix": "📈 **4K Hub / キオクシアアラート**",
     "color": 3447003
@@ -49,7 +49,7 @@
     "hub": "4K Hub（投資情報Hub）",
     "name": "NAND",
     "rss_env": "RSS_4K_NAND",
-    "webhook_env": "DISCORD_4K_WEBHOOK",
+    "webhook_env": "DISCORD_4K_NAND_WEBHOOK",
     "username": "4K Hub Alerts",
     "prefix": "💾 **4K Hub / NANDアラート**",
     "color": 10181046
