@@ -31,5 +31,27 @@
     "username": "Fireworks Hub Alerts",
     "prefix": "🎆 **Fireworks Hub / 花火アラート**",
     "color": 15105570
+  },
+  {
+    "id": "4k-kioxia",
+    "enabled": true,
+    "hub": "4K Hub（投資情報Hub）",
+    "name": "キオクシア",
+    "rss_env": "RSS_4K_KIOXIA",
+    "webhook_env": "DISCORD_4K_WEBHOOK",
+    "username": "4K Hub Alerts",
+    "prefix": "📈 **4K Hub / キオクシアアラート**",
+    "color": 3447003
+  },
+  {
+    "id": "4k-nand",
+    "enabled": true,
+    "hub": "4K Hub（投資情報Hub）",
+    "name": "NAND",
+    "rss_env": "RSS_4K_NAND",
+    "webhook_env": "DISCORD_4K_WEBHOOK",
+    "username": "4K Hub Alerts",
+    "prefix": "💾 **4K Hub / NANDアラート**",
+    "color": 10181046
   }
 ]
