@@ -17,7 +17,7 @@ import requests
 FEEDS_FILE = Path("feeds.json")
 STATE_FILE = Path("state/google_alerts_seen.json")
 
-MAX_POSTS_PER_FEED = 7
+MAX_POSTS_PER_FEED = 21
 MAX_SEEN_PER_FEED = 500
 DISCORD_TIMEOUT_SECONDS = 20
 
@@ -87,7 +87,7 @@ def is_important(title: str, summary: str = "") -> bool:
     return any(keyword.lower() in text for keyword in IMPORTANT_KEYWORDS)
 
 
-def discord_embed_payload(feed_conf, entry):
+def discord_embed_payload(_conf, entry):
     hub = feed_conf.get("hub", "Google Alerts")
     name = feed_conf.get("name", "Alert")
     base_color = int(feed_conf.get("color", 0x3498DB))
