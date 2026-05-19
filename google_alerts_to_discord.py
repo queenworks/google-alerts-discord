@@ -87,7 +87,8 @@ def is_important(title: str, summary: str = "") -> bool:
     return any(keyword.lower() in text for keyword in IMPORTANT_KEYWORDS)
 
 
-def discord_embed_payload(_conf, entry):
+# 修正後
+def discord_embed_payload(feed_conf, entry):
     hub = feed_conf.get("hub", "Google Alerts")
     name = feed_conf.get("name", "Alert")
     base_color = int(feed_conf.get("color", 0x3498DB))
