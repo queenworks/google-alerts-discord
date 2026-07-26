@@ -73,6 +73,19 @@ def env_value(name: str) -> str:
     return os.environ.get(name, "").strip()
 
 
+def resolve(feed_conf, key: str, default: str = "") -> str:
+    """feeds.json に直接値があればそれを使い、無ければ *_env で指定された
+    環境変数（Secrets）から解決する。銘柄名など公開したくない値は
+    直接書かず、*_env 経由でSecretsに置く。"""
+    direct = feed_conf.get(key)
+    if direct:
+        return direct
+    env_key = feed_conf.get(f"{key}_env")
+    if env_key:
+        return env_value(env_key) or default
+    return default
+
+
 def make_entry_id(entry) -> str:
     raw = (
         getattr(entry, "id", "")
@@ -87,10 +100,9 @@ def is_important(title: str, summary: str = "") -> bool:
     return any(keyword.lower() in text for keyword in IMPORTANT_KEYWORDS)
 
 
-# 修正後
 def discord_embed_payload(feed_conf, entry):
-    hub = feed_conf.get("hub", "Google Alerts")
-    name = feed_conf.get("name", "Alert")
+    hub = resolve(feed_conf, "hub", "Google Alerts")
+    name = resolve(feed_conf, "name", "Alert")
     base_color = int(feed_conf.get("color", 0x3498DB))
 
     title = trim(getattr(entry, "title", "No title"), 250)
@@ -100,7 +112,7 @@ def discord_embed_payload(feed_conf, entry):
 
     important = is_important(title, summary)
 
-    prefix = feed_conf.get("prefix", "")
+    prefix = resolve(feed_conf, "prefix", "")
     if important:
         prefix = "⭐ **重要** " + prefix
 
@@ -127,7 +139,7 @@ def discord_embed_payload(feed_conf, entry):
     embed = {k: v for k, v in embed.items() if v is not None}
 
     return {
-        "username": feed_conf.get("username", "Google Alerts"),
+        "username": resolve(feed_conf, "username", "Google Alerts"),
         "content": prefix,
         "embeds": [embed],
     }
@@ -156,7 +168,7 @@ def post_to_discord(webhook_url: str, payload) -> bool:
 
 
 def process_feed(feed_conf, state) -> bool:
-    name = feed_conf.get("name", "Unnamed feed")
+    name = resolve(feed_conf, "name", feed_conf.get("id", "Unnamed feed"))
 
     rss_url = env_value(feed_conf.get("rss_env", ""))
     webhook_url = env_value(feed_conf.get("webhook_env", ""))
@@ -231,14 +243,15 @@ def main() -> int:
     changed = False
 
     for feed_conf in feeds:
+        feed_label = resolve(feed_conf, "name", feed_conf.get("id", "unknown"))
         if not feed_conf.get("enabled", True):
-            print(f"SKIP DISABLED: {feed_conf.get('name')}")
+            print(f"SKIP DISABLED: {feed_label}")
             continue
 
         try:
             changed = process_feed(feed_conf, state) or changed
         except Exception as exc:
-            print(f"ERROR: {feed_conf.get('name')} / {exc}", file=sys.stderr)
+            print(f"ERROR: {feed_label} / {exc}", file=sys.stderr)
 
     if changed:
         save_json(STATE_FILE, state)

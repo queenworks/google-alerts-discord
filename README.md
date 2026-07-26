@@ -30,15 +30,8 @@ state/.gitkeep
 
 ### Discord側
 
-まだチャンネルを作っていない場合は、先に以下を作ります。
-
-- 4K Hub（投資情報Hub）
-- 🌏 Weather Bosai Hub（気象防災ハブ）
-- Fireworks Hub（花火ハブ）
-
-それぞれのサーバー、またはチャンネルで Webhook を作ります。
-
-Discordのチャンネル設定から、
+まだチャンネルを作っていない場合は、先にDiscordサーバー・チャンネルを作り、
+それぞれの投稿先チャンネルでWebhookを作ります。
 
 ```text
 連携サービス
@@ -64,28 +57,12 @@ Actions
 New repository secret
 ```
 
-以下を登録します。
+`feeds.json` に書かれた `rss_env` / `webhook_env` の名前でSecretを登録します。
 
-### 4K Hub
-
-```text
-RSS_4K_INVEST
-DISCORD_4K_WEBHOOK
-```
-
-### Weather Bosai Hub
-
-```text
-RSS_WEATHER_BOSAI
-DISCORD_WEATHER_BOSAI_WEBHOOK
-```
-
-### Fireworks Hub
-
-```text
-RSS_FIREWORKS
-DISCORD_FIREWORKS_WEBHOOK
-```
+内容を公開したくないフィード（銘柄名など）は、`hub` / `name` / `username` / `prefix` を
+`feeds.json` に直接書かず、代わりに `hub_env` / `name_env` / `username_env` / `prefix_env`
+で参照するSecret名を指定してください。実際の表示名やアラート文言はSecrets側にだけ置かれ、
+`feeds.json`には残りません。
 
 ## GoogleアラートRSSの作り方
 
@@ -97,7 +74,7 @@ Googleアラートでアラートを作成し、配信先を「RSSフィード�
 
 `feeds.json` に1ブロック追加します。
 
-例:
+公開してよい内容の例:
 
 ```json
 {
@@ -113,21 +90,33 @@ Googleアラートでアラートを作成し、配信先を「RSSフィード�
 }
 ```
 
-その場合、GitHub Secrets に以下を追加します。
+非公開にしたい内容の例（表示名もSecrets経由にする）:
 
-```text
-RSS_FIREWORKS_AKITA
+```json
+{
+  "id": "watch-4",
+  "enabled": true,
+  "hub_env": "WATCH4_HUB",
+  "name_env": "WATCH4_NAME",
+  "rss_env": "WATCH4_RSS",
+  "webhook_env": "WATCH4_WEBHOOK",
+  "username_env": "WATCH4_USERNAME",
+  "prefix_env": "WATCH4_PREFIX",
+  "color": 3447003
+}
 ```
 
-同じDiscordチャンネルへ流すなら、`webhook_env` は既存の `DISCORD_FIREWORKS_WEBHOOK` のままでOKです。
+この場合、GitHub Secretsに `WATCH4_RSS` `WATCH4_WEBHOOK` `WATCH4_HUB` `WATCH4_NAME`
+`WATCH4_USERNAME` `WATCH4_PREFIX` を登録します。
 
 ## 実行タイミング
 
-`.github/workflows/google_alerts_discord.yml` では、1日2回にしています。
+`.github/workflows/google_alerts_discord.yml` では、1日3回にしています。
 
 ```text
-JST 07:30
-JST 19:30
+JST 05:00
+JST 13:00
+JST 19:00
 ```
 
 変更したい場合は cron を変更します。
@@ -135,17 +124,18 @@ JST 19:30
 ## 重複投稿防止
 
 投稿済みの記事IDを `state/google_alerts_seen.json` に保存します。
+キーは各フィードの `id` です。
 
 GitHub Actionsが実行後にこのファイルを自動コミットします。
 これにより、次回実行時に同じ記事を再投稿しません。
 
 ## 最初の実行について
 
-初回はRSS内の新着記事を最大3件ずつ投稿します。
+初回はそのフィードの記事を投稿せず、既読登録だけを行います。
+2回目以降の実行から新着記事を投稿します。
 
-大量投稿を避けるため、1つのRSSにつき最大3件に制限しています。
-変更したい場合は `google_alerts_to_discord.py` の以下を編集します。
+1回の実行で投稿する件数は、`google_alerts_to_discord.py` の以下で制限しています。
 
 ```python
-MAX_POSTS_PER_FEED = 3
+MAX_POSTS_PER_FEED = 21
 ```

@@ -16,14 +16,26 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      RSS_4K_APPLE: ${{ secrets.RSS_4K_APPLE }}
-      DISCORD_4K_APPLE_WEBHOOK: ${{ secrets.DISCORD_4K_APPLE_WEBHOOK }}
-    
-      RSS_4K_KIOXIA: ${{ secrets.RSS_4K_KIOXIA }}
-      DISCORD_4K_KIOXIA_WEBHOOK: ${{ secrets.DISCORD_4K_KIOXIA_WEBHOOK }}
-    
-      RSS_4K_NAND: ${{ secrets.RSS_4K_NAND }}
-      DISCORD_4K_NAND_WEBHOOK: ${{ secrets.DISCORD_4K_NAND_WEBHOOK }}
+      WATCH1_RSS: ${{ secrets.WATCH1_RSS }}
+      WATCH1_WEBHOOK: ${{ secrets.WATCH1_WEBHOOK }}
+      WATCH1_HUB: ${{ secrets.WATCH1_HUB }}
+      WATCH1_NAME: ${{ secrets.WATCH1_NAME }}
+      WATCH1_USERNAME: ${{ secrets.WATCH1_USERNAME }}
+      WATCH1_PREFIX: ${{ secrets.WATCH1_PREFIX }}
+
+      WATCH2_RSS: ${{ secrets.WATCH2_RSS }}
+      WATCH2_WEBHOOK: ${{ secrets.WATCH2_WEBHOOK }}
+      WATCH2_HUB: ${{ secrets.WATCH2_HUB }}
+      WATCH2_NAME: ${{ secrets.WATCH2_NAME }}
+      WATCH2_USERNAME: ${{ secrets.WATCH2_USERNAME }}
+      WATCH2_PREFIX: ${{ secrets.WATCH2_PREFIX }}
+
+      WATCH3_RSS: ${{ secrets.WATCH3_RSS }}
+      WATCH3_WEBHOOK: ${{ secrets.WATCH3_WEBHOOK }}
+      WATCH3_HUB: ${{ secrets.WATCH3_HUB }}
+      WATCH3_NAME: ${{ secrets.WATCH3_NAME }}
+      WATCH3_USERNAME: ${{ secrets.WATCH3_USERNAME }}
+      WATCH3_PREFIX: ${{ secrets.WATCH3_PREFIX }}
 
       RSS_FIREWORKS_GLOBAL: ${{ secrets.RSS_FIREWORKS_GLOBAL }}
       DISCORD_FIREWORKS_WEBHOOK: ${{ secrets.DISCORD_FIREWORKS_WEBHOOK }}
