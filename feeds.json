@@ -1,16 +1,5 @@
 [
   {
-    "id": "weather-global",
-    "enabled": true,
-    "hub": "🌏 Weather Bosai Hub（気象防災ハブ）",
-    "name": "異常気象（グローバル）",
-    "rss_env": "RSS_WEATHER_GLOBAL",
-    "webhook_env": "DISCORD_WEATHER_BOSAI_WEBHOOK",
-    "username": "Weather Bosai Alerts",
-    "prefix": "🌏 **Weather Bosai Hub / 異常気象アラート**",
-    "color": 3066993
-  },
-  {
     "id": "fireworks-global",
     "enabled": true,
     "hub": "Fireworks Hub（花火ハブ）",
